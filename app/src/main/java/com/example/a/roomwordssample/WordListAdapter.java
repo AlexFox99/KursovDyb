@@ -33,9 +33,9 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         if ((mWords != null)&&(mDate1 != null)&&(mDate2 != null)&&(mRating != null)) {
             Log.i("Curent","Шаг:"+String.valueOf(position));
             Word current = mWords.get(position);
-            Log.i("Curent1","Шаг:"+String.valueOf(position)+" "+current);
+            Log.i("Curent1","Шаг:"+String.valueOf(position)+" "+current+current.toString());
             holder.wordItemView.setText(current.getWord());
-            Log.i("Curent21","Шаг:"+String.valueOf(position)+" "+mDate1.get(position)+" Значение:"+current.getWord());
+//            Log.i("Curent21","Шаг:"+String.valueOf(position)+" "+mDate1.get(position)+" Значение:"+current.getWord());
             Date1 current2 = mDate1.get(position);
             Log.i("Curent4","Шаг:"+String.valueOf(position)+" "+current2);
             holder.date1ItemView.setText(current2.getDate1());
@@ -49,12 +49,6 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
             holder.ratingItemView.setRating(current4.getRating());
             Log.i("Curent4","Шаг:"+String.valueOf(position)+" Значение:"+current4.getRating());
 
-        } else {
-            // Covers the case of data not being ready yet.
-            holder.wordItemView.setText("No Word");
-            holder.date1ItemView.setText("No Date1");
-            holder.date2ItemView.setText("No Word");
-            holder.ratingItemView.setRating(0f);
         }
 
     }
@@ -85,7 +79,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
     @Override
     public int getItemCount() {
         if (mWords != null)
-            return mWords.size();
+            return mWords.size()-1;
         else return 0;
     }
 

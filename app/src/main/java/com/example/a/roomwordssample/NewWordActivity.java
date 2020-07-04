@@ -34,8 +34,8 @@ import static android.telephony.AvailableNetworkInfo.PRIORITY_HIGH;
 public class NewWordActivity extends AppCompatActivity {
     public static final String EXTRA_REPLY =
             "com.example.android.roomwordssample.REPLY";
-    private String MY1;
-    private String MY2;
+    public String MY1;
+    public String MY2;
     private Float fl;
     private static String CHANNEL_ID = "MY channel";
     private static int NOTIFY_ID;
